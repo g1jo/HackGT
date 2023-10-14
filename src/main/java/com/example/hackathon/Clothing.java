@@ -1,7 +1,6 @@
 package com.example.hackathon;
 public interface Clothing {
-    public boolean isTop();
-    public boolean isBottom();
+    public String toStringType();
     public boolean rain();
     public int getStyleRange();
     public int getTempRange();
@@ -10,6 +9,7 @@ public interface Clothing {
 
     public class Shirt implements Clothing {
         // Vars
+        String type = "shirt";
         boolean rain;
         int styleRange;
         int tempRange;
@@ -27,8 +27,7 @@ public interface Clothing {
         }
         
         // Methods 
-        public boolean isTop() {return true;}
-        public boolean isBottom() {return false;}
+        public String toStringType(){return type;}
         public boolean rain() {return rain;}
         public int getStyleRange() {return styleRange;}
         public int getTempRange() {return tempRange;}
@@ -37,6 +36,7 @@ public interface Clothing {
 
     public class Shorts implements Clothing {
         // Vars
+        String type = "shorts";
         boolean rain;
         int styleRange;
         int tempRange;
@@ -54,8 +54,7 @@ public interface Clothing {
         }
         
         // Methods 
-        public boolean isTop() {return false;}
-        public boolean isBottom() {return true;}
+        public String toStringType(){return type;}
         public boolean rain() {return rain;}
         public int getStyleRange() {return styleRange;}
         public int getTempRange() {return tempRange;}
@@ -64,6 +63,7 @@ public interface Clothing {
 
     public class Pants implements Clothing {
         // Vars
+        String type = "pants";
         boolean rain;
         int styleRange;
         int tempRange;
@@ -81,8 +81,7 @@ public interface Clothing {
         }
         
         // Methods 
-        public boolean isTop() {return false;}
-        public boolean isBottom() {return true;}
+        public String toStringType(){return type;}
         public boolean rain() {return rain;}
         public int getStyleRange() {return styleRange;}
         public int getTempRange() {return tempRange;}
@@ -91,6 +90,7 @@ public interface Clothing {
 
     public class Jacket implements Clothing {
         // Vars
+        String type = "jacket";
         boolean rain;
         int styleRange;
         int tempRange;
@@ -108,8 +108,7 @@ public interface Clothing {
         }
         
         // Methods 
-        public boolean isTop() {return true;}
-        public boolean isBottom() {return false;}
+        public String toStringType(){return type;}
         public boolean rain() {return rain;}
         public int getStyleRange() {return styleRange;}
         public int getTempRange() {return tempRange;}
