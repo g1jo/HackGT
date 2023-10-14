@@ -1,29 +1,34 @@
 import './App.css';
-import StyleSelect from './components/Style';
-import ButtonAppBar from './components/Toolbar';
-import ColorSelect from './components/Color'
-import TempSelect from './components/Temp';
-import Buttons from './components/Clothing'
-import { WidthWide } from '@mui/icons-material';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Input from './pages/Input'
+import Generate from './pages/Generate'
 
-function App() {
+
+
+export default function App() {
   return (
-    <div className="Clothing Finder">
-      <ButtonAppBar/>
-      &nbsp;
-        <div style={{position: 'absolute', left: '35%'}}>
-          <h2>Please Enter Your Clothing Item</h2>
-          &nbsp;
-          <StyleSelect/>
-          &nbsp;
-          <ColorSelect/>
-          &nbsp;
-          <TempSelect/>
-          &nbsp;
-          <center><Buttons/></center>
-        </div>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />}/>
+          <Route path="/home" element={<Home />}/>
+          <Route path="/input" element={<Input />}/>
+          <Route path="/generate" element={<Generate />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+
+
+
+
+
+
+// function App() {
+//   return (
+//   );
+// }
+// export default App;
