@@ -1,4 +1,6 @@
 package com.example.hackathon;
+import jakarta.persistence.*;
+
 
 /**
  * Clothing iteraface and implementing classes
@@ -6,14 +8,29 @@ package com.example.hackathon;
  * @version 1.0
  */
 public interface Clothing {
+
+
     public String toStringType();
     public boolean rain();
     public int getStyleRange();
     public int getTempRange();
     public String getColor();
 
-
+    @Entity
+    @Table
     public class Shirt implements Clothing {
+        @Id
+        @SequenceGenerator(
+                name = "student_sequence",
+                sequenceName = "student_sequence",
+                allocationSize = 1
+        )
+
+        @GeneratedValue(
+                strategy = GenerationType.SEQUENCE,
+                generator = "student_sequence"
+        )
+        // Vars
         /**
          * Variables for shirt object
          */
@@ -46,7 +63,13 @@ public interface Clothing {
             this.color = color;
             this.rain = rain;
         }
-        
+
+        public Shirt() {
+
+        }
+
+        // Methods 
+
         /**
          * Get methods for shirt variables
          */
