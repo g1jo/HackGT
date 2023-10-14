@@ -1,6 +1,13 @@
 package com.example.hackathon;
 import java.util.*;
 
+
+/**
+ * Sorting class for arrays of clothing items
+ * 
+ * @author Garrett Jones
+ * @version 1.0
+ */
 public class Sorting {
     private int[] desired;
 
