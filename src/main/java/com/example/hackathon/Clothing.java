@@ -1,13 +1,19 @@
 package com.example.hackathon;
+import jakarta.persistence.*;
+
 public interface Clothing {
+
+
     public String toStringType();
     public boolean rain();
     public int getStyleRange();
     public int getTempRange();
     public String getColor();
 
-
+    @Entity
     public class Shirt implements Clothing {
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
         // Vars
         String type = "shirt";
         boolean rain;
@@ -25,7 +31,11 @@ public interface Clothing {
             this.color = color;
             this.rain = rain;
         }
-        
+
+        public Shirt() {
+
+        }
+
         // Methods 
         public String toStringType(){return type;}
         public boolean rain() {return rain;}
