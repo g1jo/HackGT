@@ -1,3 +1,4 @@
+package com.example.hackathon;
 public interface Clothing {
     public boolean isTop();
     public boolean isBottom();
